@@ -1,0 +1,33 @@
+﻿Unix commands
+
+
+1. ls - List directory contents.
+2. cd - Change the current directory.
+3. pwd - Print working directory.
+4. mkdir - Make directories.
+5. rmdir - Remove empty directories.
+6. rm - Remove files or directories.
+7. cp - Copy files or directories.
+8. mv - Move or rename files or directories.
+9. touch - Create an empty file or update timestamps.
+10. cat - Concatenate and display files.
+11. less - Display text files with paging.
+12. head - Output the first part of files.
+13. tail - Output the last part of files.
+14. grep - Search for patterns in files.
+15. find - Search for files in a directory hierarchy.
+16. chmod - Change file mode bits (permissions).
+17. chown - Change file owner and group.
+18. ps - Report a snapshot of the current processes.
+19. kill - Terminate processes.
+20. top - Display and update sorted information about processes.
+21. du - Estimate file space usage.
+22. df - Report file system disk space usage.
+23. man - Display the manual page for a command.
+24. info - Display program information.
+25. tar - Tape archive utility.
+26. gzip - Compress or expand files.
+27. unzip - Extract files from a ZIP archive.
+28. ssh - Secure Shell remote login client.
+29. scp - Secure copy (remote file copy program).
+30. wget - Retrieve files from the web.
