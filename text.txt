@@ -1,0 +1,220 @@
+//creating a file and some commands 
+user@hello-world:~$ cat> grepfilter.txt
+welcome to ubuntu
+hii this is linux / unix commands 
+rgukt rajiv gandhi university knowledge technology
+user@hello-world:~$ grep "rgukt" grepfilter.txt
+rgukt rajiv gandhi university knowledge technology
+user@hello-world:~$ grep "s/rgukt/UNIX/" grepfilter.txt
+user@hello-world:~$ grep -n "unix" grepfilter.txt
+2:hii this is linux / unix commands
+user@hello-world:~$ grep -h "unix" grepfilter.txt
+hii this is linux / unix commands
+user@hello-world:~$ grep -v "unix" grepfilter.txt
+welcome to ubuntu
+rgukt rajiv gandhi university knowledge technology
+user@hello-world:~$ grep -o "unix" grepfilter.txt
+unix
+user@hello-world:~$ grep -e "unix" grepfilter.txt
+hii this is linux / unix commands
+user@hello-world:~$ grep -c "unix" grepfilter.txt
+1
+user@hello-world:~$ grep -i "unix" grepfilter.txt
+hii this is linux / unix commands
+user@hello-world:~$ grep -1 "unix" grepfilter.txt
+welcome to ubuntu
+hii this is linux / unix commands
+rgukt rajiv gandhi university knowledge technology
+user@hello-world:~$ grep -n "unix" grepfilter.txt
+2:hii this is linux / unix commands
+user@hello-world:~$ grep -f "unix" grepfilter.txt
+grep: unix: No such file or directory
+user@hello-world:~$ grep -f file "unix" grepfilter.txt
+grep: unix: No such file or directory
+user@hello-world:~$ grep "^unix" grepfilter.txt
+user@hello-world:~$ grep -o "o" grepfilter.txt
+o
+o
+o
+o
+o
+o
+user@hello-world:~$ grep -n "o" grepfilter.txt
+1:welcome to ubuntu
+2:hii this is linux / unix commands
+3:rgukt rajiv gandhi university knowledge technology
+user@hello-world:~$ grep -c "o" grepfilter.txt
+3
+user@hello-world:~$ grep -v "this" grepfilter.text
+grep: grepfilter.text: No such file or directory
+user@hello-world:~$ grep -v "this" grepfilter.txt
+welcome to ubuntu
+rgukt rajiv gandhi university knowledge technology
+
+//sorting
+
+user@hello-world:~$ cat> monthFile.txt
+august
+march
+january
+december
+user@hello-world:~$ sort -M monthFile.txt
+january
+march
+august
+december
+user@hello-world:~$ cat>numberFile.txt
+33 
+90
+11
+50
+user@hello-world:~$ sort -n numberFile.txt
+11
+33 
+50
+90
+user@hello-world:~$ sort -m monthFile.txt
+august
+march
+january
+december
+user@hello-world:~$ sort -M monthFile.txt
+january
+march
+august
+december
+user@hello-world:~$ sort monthFile.txt
+august
+december
+january
+march
+user@hello-world:~$ sort -o monthFile.txt
+user@hello-world:~$ sort -r monthFile.txt
+user@hello-world:~$ sort -R monthFile.txt
+user@hello-world:~$ sort -c monthFile.txt
+user@hello-world:~$ sort -nr numberFile.txt
+90
+50
+33 
+11
+user@hello-world:~$ sort -c numberFile.txt
+sort: numberFile.txt:3: disorder: 11
+user@hello-world:~$ sort -r numberFile.txt
+90
+50
+33 
+11
+user@hello-world:~$ sort -r monthFile.txt
+user@hello-world:~$ sort -o monthFile.txt
+^[[A^[[A
+user@hello-world:~$ sort -o numberFile.txt
+65
+user@hello-world:~$ sed 's/unix/UNIX/'file2.txt
+sed: -e expression #1, char 13: unknown option to `s'
+user@hello-world:~$ sed 's/unix/UNIX/' file2.txt
+UNIX
+ubuntu
+RGUKT Basar Nirmal
+user@hello-world:~$ cat> dayFile.txt
+monday
+saturday
+thursday
+tuesday
+user@hello-world:~$ sort -d dayFile.txt
+monday
+saturday
+thursday
+tuesday
+
+//creating a new file
+
+user@hello-world:~$ cat> file2.txt
+unix
+ubuntu
+RGUKT Basar Nirmal
+
+user@hello-world:~$ sed 's/ubuntu/UNIX/' file2.txt   //changing the word
+unix
+UNIX
+RGUKT Basar Nirmal
+
+user@hello-world:~$ sed 's/ubuntu/UBUNTU/' file2.txt
+unix
+UBUNTU
+RGUKT Basar Nirmal
+
+user@hello-world:~$ 
+
+sed 's/u/D/g' file2.txt
+Dnix
+DbDntD
+RGUKT Basar Nirmal
+
+user@hello-world:~$ sed 's/u/D/' file2.txt    
+Dnix
+Dbuntu
+RGUKT Basar Nirmal
+
+ shutdown -r now      //shutdown the laptop now
+use 'shutdown -c' to cancel.
+
+shutdown -r 15:08 //specifying time
+
+//AWK
+
+ cat>employee.txt
+venky window id 4567
+arun storage id 1456
+nilesh unix id 4557
+smitha
+azhar linux id 2456
+ 
+user@hello-world:~$ awk '{print $1,$3}' employee.txt
+venky id
+arun id
+nilesh id
+smitha 
+azhar id
+
+user@hello-world:~$ free m
+              total        used        free      shared  buff/cache   available
+Mem:        7901560     1144880     5521140      135668     1235540     6359836
+Swap:       2097148           0     2097148
+
+user@hello-world:~$ free m |awk '/mem/'
+user@hello-world:~$ awk '/Mem/{print}' freem
+awk: cannot open freem (No such file or directory)
+user@hello-world:~$ awk '/Mem/{print}' free -m
+awk: cannot open free (No such file or directory)
+user@hello-world:~$ awk '{print $1,$2}' employee.txt
+venky window
+arun storage
+nilesh unix
+smitha 
+azhar linux
+
+/*
+ftp and ssh
+*/
+
+user@hello-world:~$ ftp ftp.dlptest.com
+Connected to ftp.dlptest.com.
+220 Welcome to the DLP Test FTP Server
+Name (ftp.dlptest.com:user): dlpuser
+331 Please specify the password.
+Password:
+230 Login successful.
+Remote system type is UNIX.
+Using binary mode to transfer files.
+ftp> ls
+200 PORT command successful. Consider using PASV.
+150 Here comes the directory listing.
+drwxr-xr-x    3 1001     1001           18 Mar 26 10:52 Vorne
+-rw-r--r--    1 1001     1001            0 Mar 26 10:56 actorstoday.txt
+-rw-r--r--    1 1001     1001            0 Mar 26 10:56 actorstomorrow.txt
+226 Directory send OK.
+ftp> touch abc.txt
+?Invalid command
+ftp> 
+
+
